@@ -1,0 +1,27 @@
+{
+    "extends": "@tsconfig/node20/tsconfig.json",
+    "compilerOptions": {
+        "module": "ESNext",    
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+      "baseUrl": "./",
+      "outDir": "dist",
+      "sourceMap": true,
+      "noImplicitAny": false,
+      "paths": {
+        "@daos": [
+          "src/daos"
+        ],
+        "@entities": [
+          "src/entities"
+        ]
+      },
+    },
+    "include": [
+      "src/**/*.ts"
+, "seedProduct.ts"    ],
+    "ts-node": {
+    "esm": true,
+
+  }
+  }
