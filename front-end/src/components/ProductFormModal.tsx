@@ -5,6 +5,8 @@ import {
   DialogActions,
   TextField,
   Button,
+  Box,
+  Divider
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
 
@@ -32,7 +34,9 @@ const ProductFormModal = ({
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>{initialData ? 'Modifier un produit' : 'Ajouter un produit'}</DialogTitle>
+      <Divider sx={{ margin: '8px 0' }} />
       <DialogContent>
+      <Box sx={{ marginTop: 2 }}>
         <TextField
           label="Nom"
           {...register('name', { required: 'Le nom est requis' })}
@@ -76,7 +80,9 @@ const ProductFormModal = ({
           fullWidth
           sx={{ mb: 2 }}
         />
+        </Box>
       </DialogContent>
+      <Divider sx={{ margin: '8px 0' }} />
       <DialogActions>
         <Button onClick={onClose}>Retour</Button>
         <Button onClick={handleSubmit(handleFormSubmit)}>Enregistrer</Button>

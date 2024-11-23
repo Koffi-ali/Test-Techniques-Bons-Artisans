@@ -1,4 +1,7 @@
 #!bin/bash
 
-cd back-end
+cd front-end
+npm run lint:fix
+
+cd ../back-end
 npm run lint:fix

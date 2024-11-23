@@ -44,7 +44,7 @@ const ProductTable = ({ products, onEdit, onDelete, onRecover,onWithdraw }: any)
                         <Edit />
                         </IconButton>
                     </Tooltip>
- 
+
                 )}
                 { product.available && (
                     <Tooltip title="supprimer">

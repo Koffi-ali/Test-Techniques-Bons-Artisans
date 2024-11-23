@@ -1,0 +1,26 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+      "tslint:recommended"
+    ],
+    "linterOptions": {
+      "exclude": [
+        "node_modules/**"
+      ]
+    },
+    "rules": {
+      "max-classes-per-file": "off",
+      "indent": [true, "spaces", 2],
+      "interface-name": false,
+      "object-literal-sort-keys": false,
+      "ordered-imports": false,
+      "no-shadowed-variable": false,
+      "only-arrow-functions": false,
+      "no-var-requires": false,
+      "variable-name": {
+        "options": [
+          "allow-leading-underscore"
+        ]
+      }
+    }
+  }

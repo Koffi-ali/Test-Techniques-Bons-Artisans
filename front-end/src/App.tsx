@@ -1,7 +1,7 @@
 import ProductTable from './components/ProductTable';
 import Title  from './components/Title';
 import React, { useState, useEffect } from 'react';
-import { Button, Container } from '@mui/material';
+import { Button, Container, Box} from '@mui/material';
 import {
   getProducts,
   createProduct,
@@ -26,13 +26,14 @@ const App = () => {
     useEffect(() => {
       fetchProducts();
     }, []);
-  
+
     const fetchProducts = async () => {
       try {
         const response = await getProducts();
         setProducts(response);
       } catch (error) {
-        console.error('Erreur lors de la récupération des produits:', error);
+          setAlertType('error')
+          setAlert('Problème de serveur')
       }
     };
   const handleAddProduct = async (product: any) => {
@@ -68,7 +69,8 @@ const App = () => {
       try {
         await deleteProduct(selectedProduct._id);
       } catch (error) {
-        console.error('Erreur lors de la suppression du produit:', error);
+          setAlertType('error')
+          setAlert('Impossible de supprimer le produit')
       } finally {
         setSelectedProduct(null);
         setConfirmOpen(false);
@@ -83,12 +85,13 @@ const App = () => {
       try {
         await recoverProduct(selectedProduct._id);
       } catch (error) {
-        console.error('Erreur lors de la récupération du produit:', error);
+        setAlertType('error')
+        setAlert('Impossible de récupérer le produit')
       } finally {
         setSelectedProduct(null);
         setConfirmOpen(false);
         setAlertType('success')
-        setAlert('Produit déposé')
+        setAlert(actionType==='restore'? 'Produit déposé' : 'Produit récupérer')
         fetchProducts()
       }
     };
@@ -122,16 +125,18 @@ const App = () => {
        {alert && <Alert message={alert} type={alertType} onClose={() => setAlert(null)} />}
         <Container>
           <Title/>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setEditingProduct(null);
-              setModalOpen(true);
-            }}
-          >
-        Ajouter Produit
-      </Button>
+          <Box sx= {{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                setEditingProduct(null);
+                setModalOpen(true);
+              }}
+            >
+            Ajouter Produit
+          </Button>
+          </Box>
           <ProductTable
             products={products}
             onEdit={(product : any) => {

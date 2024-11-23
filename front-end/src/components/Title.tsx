@@ -2,10 +2,10 @@ import { Typography, Box } from '@mui/material';
 
 const Title = () => {
   return (
-    <Box 
+    <Box
       sx={{
-        textAlign: 'center', 
-        mt: 2, 
+        textAlign: 'center',
+        mt: 2,
         mb: 4,
       }}
     >
