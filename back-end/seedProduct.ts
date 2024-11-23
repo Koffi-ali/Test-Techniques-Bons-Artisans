@@ -7,12 +7,10 @@ const products = [
     { "name" : "AC3 Phone3", "type" : "phone", "price" : 150, "rating" : 2,"warranty_years" : 1, "available" : true },
     { "name" : "AC4 Phone4", "type" : "phone", "price" : 50.20, "rating" : 3,"warranty_years" : 2, "available" : true }
   ]
-async function seedProducts() {
-  try {
-      await connect('mongodb://mongo:27017/mydatabase').then( async () => {
-        console.log('Connected to MongoDB');
-        const count = await Product.countDocuments();
-        console.log(' doc :', count)
+ async function seedProducts() {
+ 
+      const count = await Product.countDocuments();
+      console.log(' doc :', count)
       if (count > 0) {
           console.log('Products already seeded. Skipping...');
       } else {
@@ -22,10 +20,7 @@ async function seedProducts() {
           }
           console.log('Products seeded successfully');
       }
-      })
-  } catch (error) {
-      console.error('Error seeding products:', error);
-  }
+   
 }
 
-seedProducts();
+export default seedProducts;

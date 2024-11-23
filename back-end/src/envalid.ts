@@ -9,4 +9,5 @@ const notEmpty = makeValidator((input) => {
 export default cleanEnv(process.env, {
     FRONT_URL: notEmpty(),
     MONGO_URI:notEmpty(),
+    SESSION_SECRET: notEmpty(),
 })

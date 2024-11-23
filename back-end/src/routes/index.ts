@@ -13,6 +13,6 @@ const corsOptions = {
 }
 
 router.use(cors(corsOptions))
-router.use('/product', Product)
+router.use('/products', Product)
 
 export default router

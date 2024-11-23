@@ -1,4 +1,4 @@
-import mongoose, {Schema, model} from 'mongoose';
+import {Schema, model} from 'mongoose';
 import Counter from './Counter'
 
 interface IProduct {
@@ -23,22 +23,21 @@ const ProductSchema = new Schema({
     ProductSchema.pre('save', async function (next) {
     const doc = this;
     try {
-      if (!doc.isNew) return next(); // Si ce n'est pas un nouveau document, on passe
+      if (!doc.isNew) return next(); 
   
       const counter = await Counter.findOneAndUpdate(
-        { id: 'products' }, // Identifier la collection
-        { $inc: { seq: 1 } }, // Incrémenter le compteur
-        { new: true, upsert: true } // Créer le compteur s'il n'existe pas encore
+        { id: 'products' }, 
+        { $inc: { seq: 1 } }, 
+        { new: true, upsert: true } 
       ).lean();
   
-      doc._id = counter.seq; // Assigner le nouveau _id incrémenté
+      doc._id = counter.seq; 
       next();
     } catch (error) {
       next();
     }
   });
-// const AutoIncrement = mongooseSequence(mongoose);
-// ProductSchema.plugin(mongooseSequence(mongoose), { inc_field: '_id' }); 
+
 const Product = model<IProduct>('Product', ProductSchema)
 
 export default Product
