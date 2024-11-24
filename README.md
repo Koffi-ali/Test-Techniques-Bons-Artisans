@@ -1,7 +1,8 @@
 # Test-Technique-Bons-Artisans
 
 ## Démarrer
-Il faut cloner le projet avec `git clone git@github.com:Koffi-ali/Test-Techniques-Bons-Artisans.git`.\
+Il faut cloner le projet avec `git clone git@github.com:Koffi-ali/Test-Techniques-Bons-Artisans.git` en ssh\
+ou en https avec `git clone https://github.com/Koffi-ali/Test-Techniques-Bons-Artisans.git`.
 Ensuite se rendre dans le repertoire `Test-Techniques-Bons-Artisans`\.
 
 ## Lancer l'application
