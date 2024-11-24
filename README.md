@@ -1,4 +1,4 @@
-# Test-Techniques-Bons-Artisans
+# Test-Technique-Bons-Artisans
 
 ## Démarrer
 Il faut cloner le projet avec `git clone git@github.com:Koffi-ali/Test-Techniques-Bons-Artisans.git`.\
