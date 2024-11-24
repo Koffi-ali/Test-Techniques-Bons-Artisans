@@ -11,7 +11,6 @@ On commence par démarrer le service docker.\
 Ensuite dans le repertoire `Test-Techniques-Bons-Artisans`, on lance `docker compose up`\
 pour démarrer les services de  l'application (service front-end + service back-end + la database mongo).
 
-Pour stoper les services on lancera la commande `docker compose down`\
 
 
 ## Visualiser l'application
@@ -24,4 +23,7 @@ Pour visualiser la database mongodb, vous pourrez vous connecter directement \
 avec l'URI `mongodb://admin:admin123@localhost:27017/` ou en ligne de commande \
 en spécifiant le userName `admin` et le password `admin123`.\
 Une fois connecté, dans la database `test`, il y a une collection `products` qui stockent les produits.
+
+## Stoper l'application
+Pour arrêter les services de l 'application, on lancera la commande `docker compose down`
 
