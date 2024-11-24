@@ -8,16 +8,18 @@ import {
   TableRow,
   TablePagination,
   IconButton,
-  Tooltip
+  Tooltip,
+  Paper
 } from '@mui/material';
 import { Edit, Delete, Restore, ShoppingBag } from '@mui/icons-material';
+
 const ProductTable = ({ products, onEdit, onDelete, onRecover,onWithdraw }: any) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage] = useState(10);
 
   return (
     <>
-      <TableContainer>
+      <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
