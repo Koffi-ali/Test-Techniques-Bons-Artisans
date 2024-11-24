@@ -21,7 +21,7 @@ Une fois les étapes précedentes ont été rélaisées, l'application sera visi
 Le lien pour l'api du serveur est (http://localhost:4000/api/products).
 
 Pour visualiser la database mongodb, vous pourrez vous connecter directement \
-avec l'URI (mongodb://admin:admin123@localhost:27017/) ou en ligne de commande \
-en spécifiant le userName (admin) et le password (admin123).\
-Une fois connecté, dans la database (test), il y a une collection (products) qui stockent les produits.
+avec l'URI `mongodb://admin:admin123@localhost:27017/` ou en ligne de commande \
+en spécifiant le userName `admin` et le password `admin123`.\
+Une fois connecté, dans la database `test`, il y a une collection `products` qui stockent les produits.
 
